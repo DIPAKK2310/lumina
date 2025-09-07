@@ -4,9 +4,8 @@ import { NextResponse } from 'next/server'
 const isPublicRoute = createRouteMatcher([
  
     '/',
-    '/signin',
-    '/signup',
-    '/signout',
+    '/sign-in',
+    '/sign-up',
     '/verify-email',
     '/reset-password',
     '/home',
@@ -31,11 +30,11 @@ export default clerkMiddleware(async(auth, req)=>{
     //Not loggen in redirect to signin
     if(!userId ){
         if(!isPublicRoute(req) && !isPublicApiRoute(req)){
-            return NextResponse.redirect(new URL('/signin', req.url))
+            return NextResponse.redirect(new URL('/sign-in', req.url))
         }
         // if req is protected routes & user is not logged in redirect to signin
         if(isApiRequest && !isPublicApiRoute(req)){
-            return NextResponse.redirect(new URL('/signin', req.url))
+            return NextResponse.redirect(new URL('/sign-in', req.url))
         }
     }
     return NextResponse.next();
