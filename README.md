@@ -1,9 +1,10 @@
 ## Lumina Ai
 
-<p>An AI-powered SaaS with Next.js + Cloudinary is a strong combo. Next.js will give you SSR/SSG, API routes, and frontend power, while Cloudinary can handle image/video storage, optimization, and even some AI transformations.</p>
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/
-create-next-app).
+Lumina AI is an **AI-powered SaaS platform** built with Next.js and Cloudinary.  
+It allows users to **upload, transform, and optimize media with AI**, while offering authentication, payments, and a modern UI.  
+
+
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FBartoszJarocki%2Fcv)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)](https://nextjs.org/)
@@ -17,21 +18,33 @@ create-next-app).
 
 ## 🛠 Tech Stack Setup
 
-- Frontend & Backend → Next.js (App Router or Pages Router)
+- **Frontend & Backend** → Next.js (App Router or Pages Router)
 
-- Database → MongoDB (Atlas) or PostgreSQL (with Prisma)
+- **Database** → NeonDB(PostgreSQL) + Prisma(ORM)
 
-- Auth → Clerk/Auth0
+- **Auth** → Clerk/Auth0
 
-- File Handling → Cloudinary (upload, store, optimize, transform media)
+- **File Handling** → Cloudinary (upload, store, optimize, transform media)
 
-- AI APIs → OpenAI, Replicate, Hugging Face, or custom models
+- **AI APIs** → OpenAI, Replicate, Hugging Face, or custom models
 
-- Styling → TailwindCSS + ShadCN UI (since you’ve already used it)
+- **Styling** → TailwindCSS + ShadCN UI + Daisyui
 
-- Payments → Stripe for subscriptions (SaaS monetization)
+- **Payments** → Stripe for subscriptions (SaaS monetization)
 
-- Deployment → Vercel (for Next.js) + Cloudinary (for assets)
+- **Containerization** → Docker
+
+- **Deployment** → Vercel (for Next.js) + Cloudinary (for assets)
+
+## ✨ Features
+
+- 🔐 Authentication with Clerk/Auth0
+- 📸 Upload & optimize media using Cloudinary
+- 🤖 AI integrations (text, image, video)
+- 💳 Subscription payments with Stripe
+- 🎨 Modern UI with Tailwind + ShadCN
+- 🚀 Serverless deployment on Vercel
+
 
 ## Getting Started
 
@@ -52,6 +65,16 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!  
+Feel free to check the [issues page](../../issues).
+
+## 📄 License
+
+This project is licensed under the MIT License – see the [LICENSE](./LICENSE) file for details.
+
 
 ## Learn More
 
