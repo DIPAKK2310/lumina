@@ -47,8 +47,14 @@ export async function POST(request: NextRequest) {
             uploadStream.end(buffer)
         }
       )
-      return NextResponse.json({result}, {status: 200})
+      return NextResponse.json(
+        {publicId: result.public_id}, {status: 200}
+     )
     } catch (error) {
-        return NextResponse.json({ error: "Failed to upload image" }, { status: 500 });
+       console.log("Upload image failed",error)
+       return NextResponse.json(
+            { error: "Failed to upload image" }, 
+            { status: 500 }
+     );
     }
 }
