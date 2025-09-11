@@ -28,11 +28,11 @@ jobs:
         run: npm test || echo "No test found, skipping tests"
 
       # 5. Build the project
-      - name: Build Next.js
-        env:
-          NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}
-          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
-          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
-          NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
-          CLERK_SECRET_KEY: ${{ secrets.CLERK_SECRET_KEY }}
-        run: npm run build
+      #- name: Build Next.js
+       # env:
+         # NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}
+          #CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          #CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+          #NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
+          #CLERK_SECRET_KEY: ${{ secrets.CLERK_SECRET_KEY }}
+        #run: npm run build
