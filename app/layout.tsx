@@ -25,15 +25,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="en">
+    <html lang="en">
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
           >
+            <ClerkProvider>
           {children}
           <Toaster position="top-right" reverseOrder={false}/>
+    </ClerkProvider>
         </body>
       </html>
-    </ClerkProvider>
   );
 }
