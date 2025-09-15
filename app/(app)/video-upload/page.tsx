@@ -15,7 +15,7 @@ const VideoUpload = () => {
     //Max file size is 60 MB
     const max_File_Size = 60 * 1024 * 1024; // 60 MB in bytes
 
-    const handleSubmite = async (e: React.FormEvent)=>{
+    const handleSubmit = async (e: React.FormEvent)=>{
       e.preventDefault();
       //if file not found/choose alert to select a file
       if (!file) {
@@ -39,8 +39,8 @@ const VideoUpload = () => {
       formData.append("originalSize", file.size.toString()); // Append the original size of the file to the form data
 
         try {
-            const resonse = await axios.post("/api/video-upload", formData)
-            console.log("Video uploaded successfully:", resonse.data);
+            const response = await axios.post("/api/video-upload", formData)
+            console.log("Video uploaded successfully:", response.data);
             toast.success("Video uploaded successfully!", {
               icon: '✅',
             });
@@ -58,7 +58,7 @@ const VideoUpload = () => {
   return (
     <div className='container mx-auto p-4'>
       <h1 className='text-2xl font-bold mb-4'>Upload Video</h1>
-      <form onSubmit={handleSubmite} className='space-y-4'>
+      <form onSubmit={handleSubmit} className='space-y-4'>
         <div>
           <label className="label">
             <span className='label-text'>Title</span>
