@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, use } from "react"
+import React, { useState, useEffect, useCallback } from "react"
 import { getCldImageUrl, getCldVideoUrl} from "next-cloudinary"
 import { Download, Clock, FileDown, FileUp} from "lucide-react"
 import dayjs from "dayjs"// import utc from "dayjs/plugin/utc"
@@ -46,7 +46,7 @@ const VideoCard: React.FC<VideoCardProps> = ({video, onDownload}) => {
         src: publicId,
         width: 400,
         height: 225,
-        rawTransformations: ["e_preview:duration_15: max_seg_9: min_seg_duration_1"]// 
+        rawTransformations: ["e_preview:duration_15: max_seg_9: min_seg_duration_1"]//custom transformation for preview
        
       })
     },[])
@@ -100,7 +100,7 @@ const VideoCard: React.FC<VideoCardProps> = ({video, onDownload}) => {
           
           />
          )}
-         <div className="absolute bottom-2  right-2 bg-base-100 bg-opacity-70  px-2 py-1 rounded=lg text-sm flex items-center">
+         <div className="absolute bottom-2  right-2 bg-base-100 bg-opacity-70  px-2 py-1 rounded-lg text-sm flex items-center">
           <Clock size={16} className="mr-1"/>
           {formatDuration(video.duration)}
          </div>
@@ -134,8 +134,12 @@ const VideoCard: React.FC<VideoCardProps> = ({video, onDownload}) => {
                       <span>{compresionPercentage}%</span>
                     </div>
                     <button className="btn btn-primary btn-sm"
-                    onClick={() => onDownload(getFullVideolUrl(video.publicId), video.title)}>
+                    onClick={() => onDownload(getFullVideolUrl(video.publicId), video.title)
+
+                    }
+                     >
                       <Download size={16} />
+                      Download
                     </button>
                   </div>
             </div>
