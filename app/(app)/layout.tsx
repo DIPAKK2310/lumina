@@ -1,8 +1,15 @@
 "use client";
+import React, { useState } from "react";
 import { useClerk, useUser } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/router";
-import React, { use, useState } from "react";
+import {LogOutIcon, MenuIcon, LayoutDashboardIcon, Share2Icon, UploadCloudIcon, ImageIcon, UploadIcon} from "lucide-react"
+
+const SidebarItems = [
+  { href: "/home", icon: LayoutDashboardIcon, label: "Home Page"},
+  { href: "/social-share", icon: Share2Icon, label: "Social Share"},
+  { href: "/video-upload", icon: UploadIcon, label: "Video Upload"},
+]
 
 export default function AppLayout({
   children,
@@ -20,7 +27,7 @@ export default function AppLayout({
     router.push("/")// Navigate to the home page on logo click
    }
 
-   const handlesSignOut = async () => {
+   const handleSignOut = async () => {
     await signOut();// Sign out the user
    }
 
