@@ -1,10 +1,8 @@
 "use client"
 import React from 'react'
 
-const Home = () => {
+export default function Home ()  {
   return (
-    <div>This is a home page</div>
+    <div>This is a home page of Lumina it goes to dashboard</div>
   )
 }
-
-export default Home;

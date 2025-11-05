@@ -1,12 +1,11 @@
 "use client"
-import React, { useState, useEffect } from 'react';
-import Navbar from '@/components/Navbar';
-import HeroSection from '@/components/HeroSection';
-import Features from '@/components/Features';
-import Footer from '@/components/Footer';
-import Pricing from '@/components/Pricing';
-import CTA from '@/components/CTA';
-import BackgroundLayer from '@/components/BackgroundLayer';
+import Navbar from '@/components/Ui/Navbar';
+import HeroSection from '@/components/Ui/HeroSection';
+import Features from '@/components/Ui/Features';
+import Footer from '@/components/Ui/Footer';
+import Pricing from '@/components/Ui/Pricing';
+import CTA from '@/components/Ui/CTA';
+import BackgroundLayer from '@/components/Ui/BackgroundLayer';
 
 export default function Page() {
 
