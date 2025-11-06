@@ -27,6 +27,13 @@ export const metadata: Metadata = {
 
 };
 
+export const siteConfig = {
+  title: "Lumina",
+  description: "Lumina is Ai powered Image and Video Generation Platform",
+  url: process.env.NEXT_PUBLIC_URL || 'http://localhost:3000',
+
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
