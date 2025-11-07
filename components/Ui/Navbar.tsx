@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Menu, X, Sparkles } from 'lucide-react'
-import { SignInButton, SignOutButton,UserButton,useUser } from '@clerk/nextjs';
-import { Sign } from 'crypto';
+import { SignInButton,UserButton,useUser } from '@clerk/nextjs';
 
 
 export default function Navbar() {
