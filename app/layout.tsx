@@ -22,13 +22,13 @@ export interface PageMeta {
 }
 
 export const metadata: Metadata = {
-  title: "Lumina",
+  title: "Lumina AI",
   description: "Lumina an image and video generation platform",
 
 };
 
 export const siteConfig = {
-  title: "Lumina",
+  title: "Lumina Ai",
   description: "Lumina is Ai powered Image and Video Generation Platform",
   url: process.env.NEXT_PUBLIC_URL || 'http://localhost:3000',
 
