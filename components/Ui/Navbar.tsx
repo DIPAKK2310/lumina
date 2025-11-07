@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Menu, X, Sparkles } from 'lucide-react'
+import { SignInButton, SignOutButton,UserButton,useUser } from '@clerk/nextjs';
+import { Sign } from 'crypto';
+
 
 export default function Navbar() {
+      const {isSignedIn} = useUser();
       const [scrolled, setScrolled] = useState(false);
       const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-      const [activeFeature, setActiveFeature] = useState(0);
     
       useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -32,12 +35,15 @@ export default function Navbar() {
                  <a data-name="nav-link-features" href="#features" className="hover:text-purple-400 transition-colors">Features</a>
                  <a data-name="nav-link-pricing" href="#pricing" className="hover:text-purple-400 transition-colors">Pricing</a>
                  <a data-name="nav-link-about" href="#about" className="hover:text-purple-400 transition-colors">About</a>
-                 <button data-name="button-sign-in" className="px-4 py-2 rounded-lg border border-purple-500 hover:bg-purple-500/10 transition-all cursor-pointer">
-                   Sign In
+                 { !isSignedIn && (
+                  <SignInButton mode='redirect'>
+                  <button data-name="button-sign-in" className="px-4 py-2 rounded-lg border border-purple-500 hover:bg-purple-500/10 transition-all cursor-pointer">
+                   Sign In 
                  </button>
-                 <button data-name="button-get-started-nav" className="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 hover:shadow-lg hover:shadow-purple-500/50 transition-all cursor-pointer">
-                   Get Started
-                 </button>
+                 </SignInButton>
+                 )}
+                  {/* If user signed in, show profile icon */}
+        {isSignedIn && <UserButton />}
                </div>
    
                {/* Mobile Menu Button */}
@@ -58,12 +64,21 @@ export default function Navbar() {
                  <a data-name="mobile-link-features" href="#features" className="block hover:text-purple-400 transition-colors">Features</a>
                  <a data-name="mobile-link-pricing" href="#pricing" className="block hover:text-purple-400 transition-colors">Pricing</a>
                  <a data-name="mobile-link-about" href="#about" className="block hover:text-purple-400 transition-colors">About</a>
+                 { !isSignedIn && (
+                  <SignInButton mode='redirect'>
                  <button data-name="mobile-button-sign-in" className="w-full px-4 py-2 rounded-lg border border-purple-500 hover:bg-purple-500/10 transition-all">
                    Sign In
                  </button>
                  <button data-name="mobile-button-get-started" className="w-full px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500">
                    Get Started
                  </button>
+                 </SignInButton>
+                 )}
+                    {isSignedIn && (
+              <div className="flex justify-center">
+                <UserButton afterSignOutUrl="/" />
+              </div>
+            )}
                </div>
              </div>
            )}
