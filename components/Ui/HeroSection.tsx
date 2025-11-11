@@ -6,7 +6,7 @@ export default function HeroSection() {
           {/* Badge */}
           <div data-name="hero-badge" className="inline-flex items-center space-x-2 bg-purple-500/10 border border-purple-500/20 rounded-full px-4 py-2 mb-8 animate-pulse">
             <Sparkles className="w-4 h-4 text-purple-400" />
-            <span data-name="badge-text" className="text-sm text-purple-300">Powered by Lumina Ai</span>
+            <span data-name="badge-text" className="text-sm text-purple-300">Introducing Lumina Ai</span>
           </div>
           
           {/* Headline */}
@@ -35,24 +35,14 @@ export default function HeroSection() {
             </button>
           </div>
 
-          {/* Hero Image */}
+          {/* Hero Video */}
           <div data-name="hero-image-container" className="mt-20 relative">
             <div data-name="hero-image-glow" className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur-3xl"></div>
             <div data-name="hero-image-frame" className="relative bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 shadow-2xl">
-              <div data-name="hero-image-grid" className="grid grid-cols-3 gap-4">
-                {[1, 2, 3].map((i) => (
-                  <div 
-                    key={i}
-                    data-name={`hero-image-placeholder-${i}`}
-                    className="aspect-square bg-gradient-to-br from-slate-700 to-slate-800 rounded-xl flex items-center justify-center group hover:scale-105 transition-transform"
-                  >
-                    <Image className="w-12 h-12 text-slate-500 group-hover:text-purple-400 transition-colors" />
-                  </div>
-                ))}
-              </div>
+             <iframe src='https://youtu.be/embed/s5ZEwFQ--HQ' allowFullScreen className='h-[500px] w-[600px]'/>
             </div>
           </div>
         </div>
       </section>
     )
-}
+} 
