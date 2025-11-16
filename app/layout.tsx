@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs'
 import { Toaster } from "react-hot-toast";
+import ReactLenis from "lenis/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,26 +14,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-export interface PageMeta {
-  title: string;
-  description: string;
-  keywords?: string[];
-  ogImage?: string;
 
-}
-
-export const metadata: Metadata = {
-  title: "Lumina AI",
-  description: "Lumina an image and video generation platform",
-
-};
-
-export const siteConfig = {
-  title: "Lumina Ai",
-  description: "Lumina is Ai powered Image and Video Generation Platform",
-  url: process.env.NEXT_PUBLIC_URL || 'http://localhost:3000',
-
-}
 
 export default function RootLayout({
   children,
@@ -40,15 +22,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-     <html lang="en" suppressHydrationWarning={true}>
+      <ClerkProvider>
+    <html lang="en" suppressHydrationWarning={true}>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
           >
+            <ReactLenis>
               {children}
+             
+            </ReactLenis>
             <Toaster position="top-right" reverseOrder={false}/>
         </body>
       </html>
-    </ClerkProvider>
+          </ClerkProvider>
   );
 }

@@ -1,6 +1,8 @@
+"use client"
 import React, { useEffect, useState } from 'react'
 import { Menu, X, Sparkles } from 'lucide-react'
 import { SignInButton,UserButton,useUser } from '@clerk/nextjs';
+import Link from 'next/link';
 
 
 export default function Navbar() {
@@ -33,7 +35,7 @@ export default function Navbar() {
                <div data-name="desktop-menu" className="hidden md:flex items-center space-x-8">
                  <a data-name="nav-link-features" href="#features" className="hover:text-purple-400 transition-colors">Features</a>
                  <a data-name="nav-link-pricing" href="#pricing" className="hover:text-purple-400 transition-colors">Pricing</a>
-                 <a data-name="nav-link-about" href="#about" className="hover:text-purple-400 transition-colors">About</a>
+                 <Link data-name="nav-link-about" href="/about" className="hover:text-purple-400 transition-colors">About</Link>
                  { !isSignedIn && (
                   <SignInButton mode='redirect'>
                   <button data-name="button-sign-in" className="px-4 py-2 rounded-lg border border-purple-500 hover:bg-purple-500/10 transition-all cursor-pointer">
@@ -62,7 +64,7 @@ export default function Navbar() {
                <div data-name="mobile-menu-content" className="px-4 py-4 space-y-3">
                  <a data-name="mobile-link-features" href="#features" className="block hover:text-purple-400 transition-colors">Features</a>
                  <a data-name="mobile-link-pricing" href="#pricing" className="block hover:text-purple-400 transition-colors">Pricing</a>
-                 <a data-name="mobile-link-about" href="#about" className="block hover:text-purple-400 transition-colors">About</a>
+                 <Link data-name="mobile-link-about" href="/about" className="block hover:text-purple-400 transition-colors" >About</Link>
                  { !isSignedIn && (
                   <SignInButton mode='redirect'>
                  <button data-name="mobile-button-sign-in" className="w-full px-4 py-2 rounded-lg border border-purple-500 hover:bg-purple-500/10 transition-all">

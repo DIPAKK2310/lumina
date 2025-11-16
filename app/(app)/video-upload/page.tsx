@@ -15,7 +15,7 @@ const VideoUpload = () => {
     //Max file size is 60 MB
     const max_File_Size = 60 * 1024 * 1024; // 60 MB in bytes
 
-    const handleSubmit = async (e: React.FormEvent)=>{
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>)=>{
       e.preventDefault();
       //if file not found/choose alert to select a file
       if (!file) {

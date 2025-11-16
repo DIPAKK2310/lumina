@@ -4,7 +4,7 @@ import { Download, Clock, FileDown, FileUp} from "lucide-react"
 import dayjs from "dayjs"// import utc from "dayjs/plugin/utc"
 import relativeTime from "dayjs/plugin/relativeTime"// import localizedFormat from "dayjs/plugin/localizedFormat"
 import {filesize} from "filesize"
-import { Video } from "@prisma/client"
+import Video from "@/types/index"
 
 dayjs.extend(relativeTime)// dayjs.extend(localizedFormat)
 
@@ -46,7 +46,7 @@ const VideoCard: React.FC<VideoCardProps> = ({video, onDownload}) => {
         src: publicId,
         width: 400,
         height: 225,
-        rawTransformations: ["e_preview:duration_15: max_seg_9: min_seg_duration_1"]//custom transformation for preview
+        rawTransformations: ["e_preview:duration_15:max_seg_9: min_seg_duration_1"]//custom transformation for preview
        
       })
     },[])
@@ -133,13 +133,13 @@ const VideoCard: React.FC<VideoCardProps> = ({video, onDownload}) => {
                       compression:{" "}
                       <span>{compresionPercentage}%</span>
                     </div>
-                    <button className="btn btn-primary btn-sm"
+                    <button className="btn btn-primary btn-sm "
                     onClick={() => onDownload(getFullVideolUrl(video.publicId), video.title)
 
                     }
                      >
                       <Download size={16} />
-                      Download
+                      
                     </button>
                   </div>
             </div>
