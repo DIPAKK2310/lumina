@@ -2,7 +2,7 @@
 import VideoCard from '@/components/Ui/VideoCard'
 import React, { useCallback, useEffect, useState } from 'react'
 import axios from "axios"
-import { Video } from '@/types/videos'
+import  Video from '@/types/index'
 export default function Home ()  {
   const  [videos, setVideos] = useState<Video[]>([])
   const  [loading, setloading] = useState(true)// loading state
@@ -32,7 +32,7 @@ export default function Home ()  {
   
 
    const handleFileDownload = useCallback((url: string, title: string) => {
-    ()=>{
+    ()=> {    
    
       const link = document.createElement('a');// Create a temporary anchor element
       link.href = url;// Set the href to the blob URL
@@ -42,8 +42,8 @@ export default function Home ()  {
       link.click()
       document.body.removeChild(link);// Remove the link from the body
 
-
     }
+    
   }, [])
   if(loading){
     return <div>Loading...</div>
@@ -58,7 +58,15 @@ export default function Home ()  {
         </div>
       ):(
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
-
+          {
+            videos.map((video)=>(
+              <VideoCard
+              key={video.id}
+              video={video}
+              onDownload={handleFileDownload}
+              />
+            ))
+          }
         </div>
       )}
     </div>

@@ -96,7 +96,7 @@ export default function AppLayout({
           <label htmlFor="side-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
           <aside className="bg-base-200 w-64 h-full flex flex-col">
               <div className="flex items-center justify-center py-4">
-                <ImageIcon className="w-10 h-10 text-primary"/>
+                <ImageIcon className="w-10 h-10 text-primary cursor-pointer"/>
               </div>
           <ul className="menu bg-base-200 min-h-full w-80 p-4">
               {SidebarItems.map((item)=>(
