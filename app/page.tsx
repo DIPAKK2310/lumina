@@ -4,7 +4,7 @@ import Features from '@/components/Ui/Features';
 import Footer from '@/components/Ui/Footer';
 import Pricing from '@/components/Ui/Pricing';
 import CTA from '@/components/Ui/CTA';
-import AppContainer from '@/components/Ui/Appcontainer';
+import AppContainer from '@/components/Ui/Background_Gradient';
 import Navbar from '@/components/Ui/Navbar';
 
 export default function Page() {
