@@ -1,52 +1,8 @@
 import { Check } from "lucide-react";
+import { plans } from "../config/Plans";
 
 export default function Pricing(){
-    
-  const plans = [
-    {
-      name: "Starter",
-      price: "$9",
-      period: "/month",
-      features: [
-        "100 AI transformations/month",
-        "5GB storage",
-        "Basic optimization",
-        "Email support"
-      ],
-      cta: "Start Free Trial",
-      popular: false
-    },
-    {
-      name: "Pro",
-      price: "$29",
-      period: "/month",
-      features: [
-        "1,000 AI transformations/month",
-        "50GB storage",
-        "Advanced AI features",
-        "Priority support",
-        "Custom branding",
-        "API access"
-      ],
-      cta: "Get Started",
-      popular: true
-    },
-    {
-      name: "Enterprise",
-      price: "Custom",
-      period: "",
-      features: [
-        "Unlimited transformations",
-        "Unlimited storage",
-        "Dedicated support",
-        "Custom integrations",
-        "SLA guarantee",
-        "White-label options"
-      ],
-      cta: "Contact Sales",
-      popular: false
-    }
-  ];
+  
 
     return(
            <section data-name="pricing-section" id="pricing" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/30">
@@ -99,7 +55,7 @@ export default function Pricing(){
                 </ul>
 
                 {/* CTA Button */}
-                <button data-name={`pricing-button-${plan.name.toLowerCase()}`} className={`w-full py-3 rounded-xl font-semibold transition-all ${
+                <button data-name={`pricing-button-${plan.name.toLowerCase()}`} className={`w-full py-3 rounded-xl font-semibold transition-all cursor-pointer ${
                   plan.popular
                     ? 'bg-gradient-to-r from-purple-500 to-pink-500 hover:shadow-lg hover:shadow-purple-500/50'
                     : 'border border-slate-700 hover:border-purple-500 hover:bg-slate-800'
@@ -110,6 +66,7 @@ export default function Pricing(){
             ))}
           </div>
         </div>
+        
       </section>
     )
 }
