@@ -34,7 +34,7 @@ export default function Navbar() {
                {/* Desktop Menu */}
                <div data-name="desktop-menu" className="hidden md:flex items-center space-x-8">
                  <a data-name="nav-link-features" href="#features" className="hover:text-purple-400 transition-colors">Features</a>
-                 <a data-name="nav-link-pricing" href="#pricing" className="hover:text-purple-400 transition-colors">Pricing</a>
+                 <Link data-name="nav-link-pricing" href="/price" className="hover:text-purple-400 transition-colors">Pricing</Link>
                  <Link data-name="nav-link-about" href="/about" className="hover:text-purple-400 transition-colors">About</Link>
                  { !isSignedIn && (
                   <SignInButton mode='redirect'>
@@ -63,7 +63,7 @@ export default function Navbar() {
              <div data-name="mobile-menu-dropdown" className="md:hidden bg-slate-900/95 backdrop-blur-lg border-t border-slate-800">
                <div data-name="mobile-menu-content" className="px-4 py-4 space-y-3">
                  <a data-name="mobile-link-features" href="#features" className="block hover:text-purple-400 transition-colors">Features</a>
-                 <a data-name="mobile-link-pricing" href="#pricing" className="block hover:text-purple-400 transition-colors">Pricing</a>
+                 <Link data-name="mobile-link-pricing" href="/pricing" className="block hover:text-purple-400 transition-colors">Pricing</Link>
                  <Link data-name="mobile-link-about" href="/about" className="block hover:text-purple-400 transition-colors" >About</Link>
                  { !isSignedIn && (
                   <SignInButton mode='redirect'>
