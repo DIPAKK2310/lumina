@@ -3,10 +3,11 @@ import {motion} from "motion/react"
 import { Cloud, Sparkles, Cpu, Rocket } from "lucide-react";
 import Footer from "@/components/Ui/Footer";
 import { about } from "@/components/config/About";
+import Background_Gradient from "./Background_Gradient";
 
 export default function AboutSection  ()  {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 text-gray-900">
+    <Background_Gradient>
       {/* Hero Section */}
       <section className="text-center py-20 px-6">
         <motion.h1
@@ -23,12 +24,12 @@ export default function AboutSection  ()  {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="mt-4 max-w-2xl mx-auto text-lg text-gray-600"
         > 
-        ${about.description}
+        {about.description}
         </motion.p>
       </section>
 
       {/* Mission Section */}
-      <section className="py-16 px-6 text-center bg-white">
+      <section className="py-16 px-6 text-center ">
         <div className="max-w-3xl mx-auto">
           <motion.h2
             initial={{ opacity: 0 }}
@@ -48,7 +49,7 @@ export default function AboutSection  ()  {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-6 bg-gray-50">
+      <section className="py-20 px-6 ">
         <div className="max-w-5xl mx-auto text-center">
           <motion.h2
             initial={{ opacity: 0 }}
@@ -87,7 +88,7 @@ export default function AboutSection  ()  {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-all"
+                className="rounded-2xl shadow-md p-6 hover:shadow-lg transition-all"
               >
                 <item.icon className="mx-auto text-purple-500 mb-4" size={36} />
                 <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
@@ -99,7 +100,7 @@ export default function AboutSection  ()  {
       </section>
 
       {/* Tech Stack Section */}
-      <section className="py-16 px-6 text-center bg-white">
+      <section className="py-16 px-6 text-center ">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-semibold mb-6">
             Powered by Modern Tech
@@ -144,8 +145,8 @@ export default function AboutSection  ()  {
         </a>
       </section>
       <Footer/>
-    </div>
+    </Background_Gradient>
   );
-};
+}
 
 

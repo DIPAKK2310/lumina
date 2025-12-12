@@ -1,9 +1,9 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import { Menu, X, Sparkles } from 'lucide-react'
-import { SignInButton,UserButton,useUser } from '@clerk/nextjs';
+import { SignInButton,SignUpButton,UserButton,useUser } from '@clerk/nextjs';
 import Link from 'next/link';
-
+import { inter, satoshi } from "@/app/styles/fonts";
 
 export default function Navbar() {
       const {isSignedIn} = useUser();
@@ -18,21 +18,21 @@ export default function Navbar() {
     
       
   return (
-      <nav data-name="navigation-bar" className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-slate-900/80 backdrop-blur-lg shadow-lg' : 'bg-transparent'}`}>
+      <nav data-name="navigation-bar" className={`fixed top-0 w-full  z-50 transition-all duration-300 ${scrolled ? 'bg-slate-900/80 backdrop-blur-lg shadow-lg' : 'bg-transparent'}`}>
            <div data-name="nav-container" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
              <div data-name="nav-content" className="flex justify-between items-center h-16">
                {/* Logo */}
                <div data-name="logo-section" className="flex items-center space-x-2">
-                 <div data-name="logo-icon" className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                 <div data-name="logo-icon" className="w-8 h-8 bg-gradient-to-br rounded-lg flex items-center justify-center">
                    <Sparkles className="w-5 h-5" />
                  </div>
-                 <span data-name="logo-text" className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                 <span data-name="logo-text" className={`${inter.className} text-xl bg-gradient-to-r bg-clip-text text-black `}>
                    Lumina AI
                  </span>
                </div>
    
                {/* Desktop Menu */}
-               <div data-name="desktop-menu" className="hidden md:flex items-center space-x-8">
+               <div data-name="desktop-menu" className="hidden md:flex items-center space-x-14">
                  <a data-name="nav-link-features" href="#features" className="hover:text-purple-400 transition-colors">Features</a>
                  <Link data-name="nav-link-pricing" href="/price" className="hover:text-purple-400 transition-colors">Pricing</Link>
                  <Link data-name="nav-link-about" href="/about" className="hover:text-purple-400 transition-colors">About</Link>
@@ -45,6 +45,11 @@ export default function Navbar() {
                  )}
                   {/* If user signed in, show profile icon */}
         {isSignedIn && <UserButton />}
+                <SignUpButton mode='redirect'>
+                 <button data-name="button-get-started" className="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-all cursor-pointer">
+                   Get Started
+                 </button>
+                 </SignUpButton>
                </div>
    
                {/* Mobile Menu Button */}
