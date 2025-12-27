@@ -11,7 +11,7 @@ import PricingFAQ from '@/components/Ui/FAQ';
 export default function Page() {
 
   return (
-    <div data-name="page-root" className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
+    <div data-name="page-root" className="min-h-screen bg-white text-black">
       {/* Background Layer */}
       <Navbar/>
         <AppContainer/>
