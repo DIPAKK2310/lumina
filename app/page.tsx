@@ -1,12 +1,12 @@
 "use client"
-import HeroSection from '@/components/Ui/HeroSection';
-import Features from '@/components/Ui/Features';
-import Footer from '@/components/Ui/Footer';
-import Pricing from '@/components/Ui/Pricing';
-import CTA from '@/components/Ui/CTA';
-import AppContainer from '@/components/Ui/Background_Gradient';
-import Navbar from '@/components/Ui/Navbar';
-import PricingFAQ from '@/components/Ui/FAQ';
+import HeroSection from '@/components/HeroSection';
+import Features from '@/components/Features';
+import Footer from '@/components/Footer';
+import Pricing from '@/components/Pricing';
+import CTA from '@/components/CTA';
+import AppContainer from '@/components/Background_Gradient';
+import Navbar from '@/components/Navbar';
+import PricingFAQ from '@/components/FAQ';
 
 export default function Page() {
 

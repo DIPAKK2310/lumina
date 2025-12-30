@@ -1,8 +1,8 @@
 "use client";
 import {motion} from "motion/react"
 import { Cloud, Sparkles, Cpu, Rocket } from "lucide-react";
-import Footer from "@/components/Ui/Footer";
-import { about } from "@/components/config/About";
+import Footer from "@/components/Footer";
+import { about } from "@/config/About";
 import Background_Gradient from "./Background_Gradient";
 
 export default function AboutSection  ()  {

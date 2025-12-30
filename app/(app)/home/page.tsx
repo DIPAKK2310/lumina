@@ -1,5 +1,5 @@
 "use client"
-import VideoCard from '@/components/Ui/VideoCard'
+import VideoCard from '@/components/VideoCard'
 import React, { useCallback, useEffect, useState } from 'react'
 import axios from "axios"
 import  Video from '@/types/index'

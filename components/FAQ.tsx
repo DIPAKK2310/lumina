@@ -1,4 +1,4 @@
-import { faqs } from "@/components/config/FAQ";
+import { faqs } from "@/config/FAQ";
 
 export default function PricingFAQ() {
 return (
