@@ -4,6 +4,8 @@ import { Menu, X, Sparkles } from 'lucide-react'
 import { SignInButton,SignUpButton,UserButton,useUser } from '@clerk/nextjs';
 import Link from 'next/link';
 import { inter, satoshi } from "@/app/styles/fonts";
+import { Button } from "@/components/ui/button"
+
 
 export default function Navbar() {
       const {isSignedIn} = useUser();
@@ -36,13 +38,18 @@ export default function Navbar() {
                  <a data-name="nav-link-features" href="#features" className="hover:text-purple-400 transition-colors">Features</a>
                  <Link data-name="nav-link-pricing" href="/price" className="hover:text-purple-400 transition-colors">Pricing</Link>
                  <Link data-name="nav-link-about" href="/about" className="hover:text-purple-400 transition-colors">About</Link>
-                 { !isSignedIn && (
-                  <SignInButton mode='redirect'>
-                  <button data-name="button-sign-in" className="px-4 py-2 rounded-lg border border-purple-500 hover:bg-purple-500/10 transition-all cursor-pointer">
-                   Sign In 
-                 </button>
-                 </SignInButton>
-                 )}
+              {/* Shacn Button*/ }
+                {!isSignedIn && (
+                  <SignInButton mode="redirect">
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="border-purple-500 hover:bg-purple-500/10"
+                    >
+                      <span>Sign In</span>
+                    </Button>
+                  </SignInButton>
+                )}
                   {/* If user signed in, show profile icon */}
         {isSignedIn && <UserButton />}
                 <SignUpButton mode='redirect'>
