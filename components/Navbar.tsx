@@ -28,7 +28,7 @@ export default function Navbar() {
                  <div data-name="logo-icon" className="w-8 h-8 bg-gradient-to-br rounded-lg flex items-center justify-center">
                    <Sparkles className="w-5 h-5" />
                  </div>
-                 <span data-name="logo-text" className={`${inter.className} text-xl bg-gradient-to-r bg-clip-text text-black `}>
+                 <span data-name="logo-text" className={`${inter.className} text-xl bg-gradient-to-r bg-clip-text text-white `}>
                    Lumina AI
                  </span>
                </div>
@@ -43,8 +43,7 @@ export default function Navbar() {
                   <SignInButton mode="redirect">
                     <Button
                       asChild
-                      variant="outline"
-                      className="border-purple-500 hover:bg-purple-500/10"
+                      className="bg-white text-black hover:bg-purple "
                     >
                       <span>Sign In</span>
                     </Button>
