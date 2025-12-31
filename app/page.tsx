@@ -11,7 +11,7 @@ import PricingFAQ from '@/components/FAQ';
 export default function Page() {
 
   return (
-    <div data-name="page-root" className="min-h-screen bg-white text-black">
+    <div data-name="page-root" className="min-h-screen text-white bg-black">
       {/* Background Layer */}
       <Navbar/>
         <AppContainer/>
