@@ -1,60 +1,95 @@
-import { Sparkles } from "lucide-react";
+"use client"
 
-export default function Footer(){
-    
-    return(
-  <footer data-name="footer" className="border-t border-slate-800 py-12 px-4 sm:px-6 lg:px-8">
-        <div data-name="footer-container" className="max-w-7xl mx-auto">
-          <div data-name="footer-grid" className="grid md:grid-cols-4 gap-8 mb-8">
-            {/* Brand Column */}
-            <div data-name="footer-brand">
-              <div data-name="footer-logo" className="flex items-center space-x-2 mb-4">
-                <div data-name="footer-logo-icon" className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                  <Sparkles className="w-5 h-5" />
-                </div>
-                <span data-name="footer-logo-text" className="text-xl font-bold">Lumina AI</span>
+import Link from "next/link"
+import { Sparkles } from "lucide-react"
+
+export default function Footer() {
+  return (
+    <footer className="relative bg-[#0a0a0a] text-gray-400 overflow-hidden border-t border-white/10">
+
+      {/* GRID LINE SYSTEM */}
+      <div className="absolute inset-0 pointer-events-none">
+
+        {/* Vertical grid lines */}
+        <div className="absolute left-[12%] top-0 bottom-0 w-px bg-white/5" />
+        <div className="absolute left-[37%] top-0 bottom-0 w-px bg-white/5" />
+        <div className="absolute left-[62%] top-0 bottom-0 w-px bg-white/5" />
+        <div className="absolute left-[87%] top-0 bottom-0 w-px bg-white/5" />
+
+        {/* Horizontal divider */}
+        <div className="absolute top-[68%] left-0 right-0 h-px bg-white/5" />
+      </div>
+
+      <div className="max-w-[1400px] mx-auto px-10 py-20 relative z-10">
+
+        {/* TOP SECTION */}
+        <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_1fr] gap-16">
+
+          {/* BRAND */}
+          <div>
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-9 h-9 bg-cyan-500/20 rounded-lg flex items-center justify-center">
+                <Sparkles className="w-5 h-5 text-cyan-400" />
               </div>
-              <p data-name="footer-tagline" className="text-slate-400 text-sm">
-                AI-powered media transformation platform
-              </p>
+              <span className="text-white font-semibold text-xl">
+                Lumina <span className="text-cyan-400">AI</span>
+              </span>
             </div>
-            
-            {/* Product Column */}
-            <div data-name="footer-column-product">
-              <h4 data-name="footer-heading-product" className="font-semibold mb-4">Product</h4>
-              <ul data-name="footer-list-product" className="space-y-2 text-slate-400 text-sm">
-                <li data-name="footer-link-features"><a href="#" className="hover:text-purple-400 transition-colors">Features</a></li>
-                <li data-name="footer-link-pricing"><a href="#" className="hover:text-purple-400 transition-colors">Pricing</a></li>
-                <li data-name="footer-link-api"><a href="#" className="hover:text-purple-400 transition-colors">API</a></li>
-              </ul>
-            </div>
-            
-            {/* Company Column */}
-            <div data-name="footer-column-company">
-              <h4 data-name="footer-heading-company" className="font-semibold mb-4">Company</h4>
-              <ul data-name="footer-list-company" className="space-y-2 text-slate-400 text-sm">
-                <li data-name="footer-link-about"><a href="#" className="hover:text-purple-400 transition-colors">About</a></li>
-                <li data-name="footer-link-blog"><a href="#" className="hover:text-purple-400 transition-colors">Blog</a></li>
-                <li data-name="footer-link-careers"><a href="#" className="hover:text-purple-400 transition-colors">Careers</a></li>
-              </ul>
-            </div>
-            
-            {/* Legal Column */}
-            <div data-name="footer-column-legal">
-              <h4 data-name="footer-heading-legal" className="font-semibold mb-4">Legal</h4>
-              <ul data-name="footer-list-legal" className="space-y-2 text-slate-400 text-sm">
-                <li data-name="footer-link-privacy"><a href="#" className="hover:text-purple-400 transition-colors">Privacy</a></li>
-                <li data-name="footer-link-terms"><a href="#" className="hover:text-purple-400 transition-colors">Terms</a></li>
-                <li data-name="footer-link-security"><a href="#" className="hover:text-purple-400 transition-colors">Security</a></li>
-              </ul>
-            </div>
+
+            <p className="text-sm leading-relaxed max-w-xs">
+              AI-powered platform for transforming, optimizing, and delivering media at scale.
+            </p>
           </div>
-          
-          {/* Copyright */}
-          <div data-name="footer-copyright" className="pt-8 border-t border-slate-800 text-center text-slate-400 text-sm">
-            <p>Copywright © 2025 Lumina AI <br /> All rights reserved.</p>
+
+          {/* PRODUCT */}
+          <div>
+            <h4 className="text-gray-500 uppercase tracking-wider text-xs mb-6">
+              Product
+            </h4>
+            <ul className="space-y-3 text-sm">
+              <li><Link href="#features" className="hover:text-white">Features</Link></li>
+              <li><Link href="/pricing" className="hover:text-white">Pricing</Link></li>
+              <li><Link href="/docs" className="hover:text-white">API Docs</Link></li>
+            </ul>
+          </div>
+
+          {/* COMPANY */}
+          <div>
+            <h4 className="text-gray-500 uppercase tracking-wider text-xs mb-6">
+              Company
+            </h4>
+            <ul className="space-y-3 text-sm">
+              <li><Link href="/about" className="hover:text-white">About</Link></li>
+              <li><Link href="/blog" className="hover:text-white">Blog</Link></li>
+              <li><Link href="/careers" className="hover:text-white">Careers</Link></li>
+            </ul>
+          </div>
+
+          {/* LEGAL */}
+          <div>
+            <h4 className="text-gray-500 uppercase tracking-wider text-xs mb-6">
+              Legal
+            </h4>
+            <ul className="space-y-3 text-sm">
+              <li><Link href="/privacy" className="hover:text-white">Privacy</Link></li>
+              <li><Link href="/terms" className="hover:text-white">Terms</Link></li>
+              <li><Link href="/security" className="hover:text-white">Security</Link></li>
+            </ul>
           </div>
         </div>
-      </footer>
-    )
+
+        {/* BOTTOM SECTION */}
+        <div className="pt-16 flex flex-col md:flex-row justify-between items-center text-sm">
+          <p>© {new Date().getFullYear()} Lumina AI. All rights reserved.</p>
+
+          <div className="flex gap-6 mt-4 md:mt-0">
+            <Link href="#" className="hover:text-white">Twitter</Link>
+            <Link href="#" className="hover:text-white">LinkedIn</Link>
+            <Link href="#" className="hover:text-white">GitHub</Link>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  )
 }
