@@ -25,7 +25,7 @@ export default function RootLayout({
       <ClerkProvider>
     <html lang="en" suppressHydrationWarning={true}>
         <body
-          className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${satoshi.variable} antialiased `}
+          className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${satoshi.variable} bg-[#000814] text-white antialiased `}
           >
             <ReactLenis>
               {children}
