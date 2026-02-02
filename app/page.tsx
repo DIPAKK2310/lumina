@@ -1,5 +1,5 @@
 "use client"
-import HeroSection from '@/components/HeroSection';
+import HeroSection from '@/components/Hero';
 import Features from '@/components/Features';
 import Footer from '@/components/Footer';
 import Pricing from '@/components/Pricing';
@@ -11,7 +11,7 @@ import PricingFAQ from '@/components/FAQ';
 export default function Page() {
 
   return (
-    <div data-name="page-root" className="min-h-screen text-white bg-black">
+    <div data-name="page-root" className="min-h-screen">
       {/* Background Layer */}
       <Navbar/>
         <AppContainer/>
