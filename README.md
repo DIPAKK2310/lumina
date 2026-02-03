@@ -45,6 +45,61 @@ It allows users to **upload, transform, and optimize media with AI**, while offe
 - 🎨 Modern UI with Tailwind + ShadCN
 - 🚀 Serverless deployment on Vercel
 
+## Folder Structure 
+```ts
+lumina-ai/
+│
+├── app/                     # Next.js App Router (routes, pages, layouts)
+│   ├── (auth)/              # Auth routes (login, register, etc.)
+│   ├── dashboard/           # User dashboard
+│   ├── api/                 # API routes (server actions / route handlers)
+│   ├── layout.tsx
+│   └── page.tsx
+│
+├── components/              # Reusable UI components
+│   ├── ui/                  # ShadCN / base UI components
+│   ├── forms/               # Form components
+│   ├── media/               # Media preview, upload UI
+│   └── shared/              # Navbar, Footer, etc.
+│
+├── lib/                     # Utility functions & configs
+│   ├── cloudinary.ts        # Cloudinary setup
+│   ├── stripe.ts            # Stripe config
+│   ├── auth.ts              # Clerk/Auth helpers
+│   ├── prisma.ts            # Prisma client
+│   └── utils.ts
+│
+├── config/                  # Global configuration
+│   ├── site.ts              # App metadata
+│   └── constants.ts
+│
+├── prisma/                  # Database schema & migrations
+│   ├── schema.prisma
+│   └── migrations/
+│
+├── types/                   # TypeScript types
+│   ├── user.d.ts
+│   ├── media.d.ts
+│   └── billing.d.ts
+│
+├── public/                  # Static assets
+│   ├── images/
+│   └── icons/
+│
+├── generated/               # Auto-generated files (Prisma, etc.)
+│
+├── docker/                  # Docker setup
+│   ├── Dockerfile
+│   └── docker-compose.yml
+│
+├── .env.example             # Environment variables template
+├── next.config.js
+├── tailwind.config.js
+├── tsconfig.json
+├── package.json
+└── README.md
+
+```
 
 ## Getting Started
 
