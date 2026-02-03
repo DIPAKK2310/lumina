@@ -105,7 +105,7 @@ lumina-ai/
 
 First, run the development server:
 
-```bash
+```ts
 npm run dev
 # or
 yarn dev
@@ -113,6 +113,15 @@ yarn dev
 pnpm dev
 # or
 bun dev
+```
+
+
+## 🏗 System Architecture
+```ts
+User → Next.js Frontend → API Routes → Prisma ORM → NeonDB  
+                        ↘ Cloudinary (media)  
+                        ↘ Stripe (payments)  
+                        ↘ AI APIs (OpenAI / Replicate)
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
