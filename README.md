@@ -114,7 +114,26 @@ pnpm dev
 # or
 bun dev
 ```
+## 🔐 Environment Variables
+```ts
+Create a `.env.local` file in the root and add:
 
+DATABASE_URL=
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
+
+STRIPE_SECRET_KEY=
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
+STRIPE_WEBHOOK_SECRET=
+
+OPENAI_API_KEY=
+
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+```
 
 ## 🏗 System Architecture
 ```ts
