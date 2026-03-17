@@ -143,6 +143,19 @@ User → Next.js Frontend → API Routes → Prisma ORM → NeonDB
                         ↘ AI APIs (OpenAI / Replicate)
 ```
 
+## Deployment stack wise
+```ts
+
+User → Vercel (Next.js App)
+         ↓
+     API Routes
+         ↓
+ ┌───────────────┬───────────────┬───────────────┐
+ │               │               │               │
+Cloudinary     Neon DB        Clerk         Stripe
+(Media)        (Data)        (Auth)        (Payments)
+```
+
 ## 🚀 Deployment
 ```ts
 1. Push repo to GitHub
