@@ -1,6 +1,6 @@
 
 import { NextRequest , NextResponse } from 'next/server';
-import { v2 as cloudinary } from 'cloudinary';
+import { v2 as cloudinary, UploadApiResponse } from 'cloudinary';
 import {auth} from "@clerk/nextjs/server"
 import { PrismaClient } from '@prisma/client';
 
@@ -13,13 +13,13 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET // Click 'View API Keys' above to copy your API secret
 });
 
-interface CloudinaryUploadResult{
-    public_id: string;
-    bytes: number;
-    duration?: number;
-    [key: string]: any; // Allow any other properties
+// interface CloudinaryUploadResult{
+//     public_id: string;
+//     bytes: number;
+//     duration?: number;
+//     [key: string]: any; // Allow any other properties
 
-}
+// }
 
 export async function POST(request: NextRequest) {
     try {
@@ -48,7 +48,8 @@ export async function POST(request: NextRequest) {
         const bytes = await file.arrayBuffer(); // Ensure the file is read
         const buffer = Buffer.from(bytes);// Convert to Buffer
 
-        const result = await new Promise<CloudinaryUploadResult>((resolve, reject)=>{
+        // const result = await new Promise<CloudinaryUploadResult>((resolve, reject)=>{
+        const result = await new Promise<UploadApiResponse>((resolve, reject)=>{
             // Upload to Cloudinary
             const uploadStream = cloudinary.uploader.upload_stream(
                 {   
@@ -64,7 +65,8 @@ export async function POST(request: NextRequest) {
                         console.error("Cloudinary upload error:", error);
                         reject(error);
                     }else{
-                        resolve (result as CloudinaryUploadResult);
+                        // resolve (result as CloudinaryUploadResult);
+                        resolve (result as UploadApiResponse);
                     }
                 }
             )

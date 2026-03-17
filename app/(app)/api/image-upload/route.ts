@@ -1,5 +1,5 @@
 import { NextRequest , NextResponse } from 'next/server';
-import { v2 as cloudinary, UploadStream } from 'cloudinary';
+import { v2 as cloudinary, UploadApiResponse } from 'cloudinary';
 import {auth} from "@clerk/nextjs/server"
 
 
@@ -10,11 +10,11 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET // Click 'View API Keys' above to copy your API secret
 });
 
-interface CloudinaryUploadResult{
-    public_id: string;
-    [key: string]: any; // Allow any other properties
+// interface CloudinaryUploadResult{
+//     public_id: string;
+//     [key: string]: any; // Allow any other properties
 
-}
+// }
 
 export async function POST(request: NextRequest) {
     const { userId } = await auth();
@@ -32,7 +32,8 @@ export async function POST(request: NextRequest) {
         const bytes = await file.arrayBuffer(); // Ensure the file is read
         const buffer = Buffer.from(bytes);// Convert to Buffer
 
-        const result = await new Promise<CloudinaryUploadResult>((resolve, reject)=>{
+        // const result = await new Promise<CloudinaryUploadResult>((resolve, reject)=>{
+        const result = await new Promise<UploadApiResponse>((resolve, reject)=>{
             const uploadStream = cloudinary.uploader.upload_stream(
                 {folder:"next-cloudinary-uploads"},
                 (error, result)=>{
@@ -40,7 +41,8 @@ export async function POST(request: NextRequest) {
                         console.error("Cloudinary upload error:", error);
                         reject(error);
                     }else{
-                        resolve (result as CloudinaryUploadResult);
+                        // resolve (result as CloudinaryUploadResult);
+                        resolve (result as UploadApiResponse);
                     }
                 }
             )
