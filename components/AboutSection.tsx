@@ -60,8 +60,7 @@ export default function AboutClient() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto"
           >
-            Lumen was born from a simple belief: managing, transforming, and delivering media shouldn't require a room full of engineers. We're building the platform we wished existed.
-          </motion.p>
+Lumina was born from a simple belief: managing, transforming, and delivering media shouldn&apos;t require a room full of engineers. We&apos;re building the platform we wished existed.          </motion.p>
         </div>
       </section>
 
@@ -83,7 +82,7 @@ export default function AboutClient() {
               We thought: what if one platform handled the entire pipeline? Upload once, transform with AI, optimize automatically, and deliver anywhere — all through a clean, modern interface.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              That idea became Lumen. Today, thousands of teams use Lumen to power their visual experiences, from startups to Fortune 500s.
+              That idea became Lumina. Today, thousands of teams use Lumina to power their visual experiences, from startups to Fortune 500s.
             </p>
           </motion.div>
           <motion.div
@@ -161,7 +160,7 @@ export default function AboutClient() {
               Ready to transform your <span className="text-gradient">media workflow</span>?
             </h2>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
-              Join thousands of teams who trust Lumen to power their visual experiences.
+              Join thousands of teams who trust Lumina to power their visual experiences.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <a href="#" className="inline-flex items-center gap-2 rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow hover:scale-[1.02] transition">
