@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useState } from "react"
-import { Menu, X, Sparkles } from "lucide-react"
+import { Menu, X, Sparkles, ArrowRight } from "lucide-react"
 import { SignInButton, SignUpButton, UserButton, useUser } from "@clerk/nextjs"
 import Link from "next/link"
 import { inter } from "@/app/styles/fonts"
@@ -41,7 +41,7 @@ export default function Navbar() {
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-10 text-sm text-gray-400">
             <a href="#features" className="hover:text-white transition">Features</a>
-            <Link href="/pricing" className="hover:text-white transition">Pricing</Link>
+            <Link href="#pricing" className="hover:text-white transition">Pricing</Link>
             <Link href="/about" className="hover:text-white transition">About</Link>
           </div>
 
@@ -50,14 +50,14 @@ export default function Navbar() {
             {!isSignedIn && (
               <>
                 <SignInButton mode="redirect">
-                  <Button variant="ghost" className="text-gray-30 cursor-pointer">
+                  <Button  className="text-gray-30 bg-cyan-500 cursor-pointer">
                     Sign In
                   </Button>
                 </SignInButton>
 
                 <SignUpButton mode="redirect">
                   <Button className="bg-cyan-500 hover:bg-cyan-400 text-black font-semibold rounded-xl px-5 cursor-pointer">
-                    Get Started
+                    Get Started <ArrowRight className="size-3.5" />
                   </Button>
                 </SignUpButton>
               </>
