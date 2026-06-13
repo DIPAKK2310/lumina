@@ -50,7 +50,7 @@ export default function Navbar() {
             {!isSignedIn && (
               <>
                 <SignInButton mode="redirect">
-                  <Button variant="ghost" className="text-gray-300 hover:text-white">
+                  <Button variant="ghost" className="text-gray-30 cursor-pointer">
                     Sign In
                   </Button>
                 </SignInButton>
