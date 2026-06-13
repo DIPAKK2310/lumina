@@ -56,7 +56,7 @@ export default function Navbar() {
                 </SignInButton>
 
                 <SignUpButton mode="redirect">
-                  <Button className="bg-cyan-500 hover:bg-cyan-400 text-black font-semibold rounded-xl px-5">
+                  <Button className="bg-cyan-500 hover:bg-cyan-400 text-black font-semibold rounded-xl px-5 cursor-pointer">
                     Get Started
                   </Button>
                 </SignUpButton>
