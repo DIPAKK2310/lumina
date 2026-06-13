@@ -74,7 +74,7 @@ export default function RootLayout({
 }>) {
   return (
       <ClerkProvider>
-    <html lang="en" suppressHydrationWarning={true}>
+    <html lang="en"className="dark" suppressHydrationWarning={true}>
         <body
           className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${satoshi.variable} bg-[#000814] text-white antialiased `}
           >
